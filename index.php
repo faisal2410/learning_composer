@@ -1,13 +1,16 @@
 <?php
 
-include "vendor/autoload.php";
+require_once "vendor/autoload.php";
 
-use App\Product;
-use App\User;
+use App\Controllers\Admin\UserController as AdminController;
+use App\Controllers\Frontend\UserController as FrontendController;
 
-$user= new User();
-$p1=new Product();
-echo $p1->productId;
-echo PHP_EOL;
 
-echo $user->name;
+
+
+$admin =new AdminController();
+$user=new FrontendController();
+
+
+echo $admin->getUser();
+echo $user->getUser();
